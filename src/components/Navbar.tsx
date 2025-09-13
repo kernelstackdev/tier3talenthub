@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import '../styles/Navbar.css';
 
-const Navbar = () => {
+const Navbar: FC = () => {
   return (
     <nav>
       <div className="brand">

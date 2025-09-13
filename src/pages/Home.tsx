@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import '../styles/Home.css';
 
-const categories = [
+interface Category {
+  name: string;
+  icon: string;
+}
+
+const categories: Category[] = [
   { name: 'AWS', icon: '☁️' },
   { name: 'DevOps', icon: '∞' },
   { name: 'Kubernetes', icon: '☸️' },
@@ -14,9 +19,7 @@ const categories = [
   { name: 'Trending', icon: '🔥' },
 ];
 
-
-
-const Home = () => {
+const Home: FC = () => {
   return (
     <div className="home-container">
       <h1 className="home-title">Find More Here</h1>

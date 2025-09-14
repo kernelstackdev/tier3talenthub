@@ -1,18 +1,9 @@
-import React, { FC } from 'react';
-import Navbar from './components/Navbar';
-import Intro from './components/Intro';
-import Home from './pages/Home';
-import Footer from './components/Footer';
+import MainRoutes from "./routes/MainRoutes"
 
-const App: FC = () => {
+const App = () => {
   return (
-    <div>
-      <Navbar/>
-      <Intro />
-      <Home />
-      <Footer />
-    </div>
-  );
-};
+    <MainRoutes/>
+  )
+}
 
-export default App;
+export default App

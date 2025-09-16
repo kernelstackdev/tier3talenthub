@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaBars, FaTimes } from "react-icons/fa";
+import { FaHome, FaBars, FaTimes, FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,12 +27,13 @@ const Navbar = () => {
               <FaHome />
               <span>Home</span>
             </Link>
-            <Link
-              to="/about"
-              className="flex items-center space-x-2 hover:text-yellow-200 transition duration-300"
-            >
-              <span>About Us</span>
-            </Link>
+            <div className="flex items-center">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="bg-transparent border border-white rounded px-2 py-1 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-200"
+              />
+            </div>
           </div>
           <div className="md:hidden flex items-center">
             <button
@@ -58,13 +59,14 @@ const Navbar = () => {
                 <FaHome />
                 <span>Home</span>
               </Link>
-              <Link
-                to="/about"
-                className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium hover:bg-blue-800 transition duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                <span>About Us</span>
-              </Link>
+              <div className="flex items-center px-3 py-2 rounded-md text-base font-medium">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="bg-transparent border border-white rounded px-2 py-1 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-200"
+                  onClick={() => setIsOpen(false)}
+                />
+              </div>
             </div>
           </div>
         )}

@@ -1,13 +1,6 @@
-# Blog Site Development TODO
+# TODO: Replace About Us with Search Option in Navbar
 
-- [x] Create Navbar component
-- [x] Update MainRoutes.tsx for routing (home, admin, categories)
-- [x] Create Footer component
-- [x] Create Home page
-- [x] Create Admin page
-- [x] Create BlogList component
-- [x] Create BlogForm component
-- [x] Create CategoryFilter component
-- [x] Create blog context/hook for state management
-- [x] Integrate components into pages
-- [x] Test the application
+- [x] Import FaSearch icon from react-icons/fa
+- [x] Replace "About Us" Link in desktop navbar with search input field and icon
+- [x] Replace "About Us" Link in mobile navbar with search input field and icon
+- [x] Test the UI changes (run the app and check navbar)

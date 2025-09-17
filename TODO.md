@@ -1,6 +1,5 @@
-# TODO: Replace About Us with Search Option in Navbar
+# TODO: Modify Blog Creation Form to Use Category Dropdown
 
-- [x] Import FaSearch icon from react-icons/fa
-- [x] Replace "About Us" Link in desktop navbar with search input field and icon
-- [x] Replace "About Us" Link in mobile navbar with search input field and icon
-- [x] Test the UI changes (run the app and check navbar)
+- [x] Update BlogForm.tsx to import useBlogs and fetch categories
+- [x] Replace category input with select dropdown populated with categories
+- [ ] Test the form in admin panel for create and edit functionality

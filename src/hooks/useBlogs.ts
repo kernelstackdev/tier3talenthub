@@ -4,6 +4,7 @@ export interface Blog {
   id: string;
   title: string;
   content: string;
+  description: string;
   category: string;
   date: string;
 }
@@ -56,5 +57,23 @@ export const useBlogs = () => {
     return Array.from(categories);
   };
 
-  return { blogs, addBlog, getBlogsByCategory, getCategories };
+  const getBlogById = (id: string) => {
+    return blogs.find((blog) => blog.id === id);
+  };
+
+  const deleteBlog = (id: string) => {
+    const updatedBlogs = blogs.filter((blog) => blog.id !== id);
+    setBlogs(updatedBlogs);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedBlogs));
+  };
+
+  const updateBlog = (id: string, updatedBlog: Omit<Blog, "id" | "date">) => {
+    const updatedBlogs = blogs.map((blog) =>
+      blog.id === id ? { ...blog, ...updatedBlog } : blog
+    );
+    setBlogs(updatedBlogs);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedBlogs));
+  };
+
+  return { blogs, addBlog, getBlogsByCategory, getCategories, getBlogById, deleteBlog, updateBlog };
 };

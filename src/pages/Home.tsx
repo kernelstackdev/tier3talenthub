@@ -1,9 +1,11 @@
 import { useState } from "react";
 import BlogList from "../components/BlogList";
 import CategoryFilter from "../components/CategoryFilter";
+import { useSearch } from "../context/SearchContext";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const { searchTerm } = useSearch();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -13,7 +15,7 @@ const Home = () => {
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Welcome to the Blog</h1>
             <p className="text-xl text-gray-600">Discover amazing stories and insights</p>
           </div>
-          <BlogList category={selectedCategory} />
+          <BlogList category={selectedCategory} search={searchTerm} />
         </div>
         <div className="w-48 ml-auto">
           <CategoryFilter onCategoryChange={setSelectedCategory} />

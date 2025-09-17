@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaHome, FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import { useSearch } from "../context/SearchContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { setSearchTerm } = useSearch();
 
   return (
     <nav className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
@@ -32,6 +34,7 @@ const Navbar = () => {
                 type="text"
                 placeholder="Search..."
                 className="bg-transparent border border-white rounded px-2 py-1 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-200"
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
           </div>
@@ -59,11 +62,12 @@ const Navbar = () => {
                 <FaHome />
                 <span>Home</span>
               </Link>
-              <div className="flex items-center px-3 py-2 rounded-md text-base font-medium">
+              <div className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium">
                 <input
                   type="text"
                   placeholder="Search..."
                   className="bg-transparent border border-white rounded px-2 py-1 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-200"
+                  onChange={(e) => setSearchTerm(e.target.value)}
                   onClick={() => setIsOpen(false)}
                 />
               </div>
